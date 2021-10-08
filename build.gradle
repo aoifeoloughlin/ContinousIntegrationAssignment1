@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'SoftwareEngineer3A1'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.8.1'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.terasoluna.gfw/terasoluna-gfw-jodatime
+    implementation group: 'org.terasoluna.gfw', name: 'terasoluna-gfw-jodatime', version: '5.7.0.RELEASE'
+
+}
+
+test{
+    useJUnitPlatform()
+}
