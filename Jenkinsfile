@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
            // The below will clone your repo and will be checked out to master branch by default.
-           git credentialsId: 'jenkins-aoifeoloughlin-github', url: 'https://github.com/aoifeoloughlin/ContinuousIntegrationAssignment1.git'
+           git credentialsId: 'aoifeoloughlin', url: 'https://github.com/aoifeoloughlin/ContinuousIntegrationAssignment1.git'
             echo 'Make the output directory'
            //sh "ls -lart ./*"
            // List all branches in your repo.
