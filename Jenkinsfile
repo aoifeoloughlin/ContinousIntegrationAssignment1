@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
            // The below will clone your repo and will be checked out to master branch by default.
-           git credentialsId:'a8f79aa4-6d55-42a2-bfe2-cfd108534b41', url:'https://github.com/aoifeoloughlin/ContinuousIntegrationAssignment1.git'
+           git username:'aoifeoloughlin', password:"Nannycantsaylasagne", url:'https://github.com/aoifeoloughlin/ContinuousIntegrationAssignment1.git'
             echo 'Make the output directory'
 
           }
