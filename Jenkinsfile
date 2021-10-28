@@ -6,7 +6,7 @@ pipeline {
         script {
            echo 'Create New Branch'
            //create new branch
-           git credentialsId: ', url: 'https://github.com/aoifeoloughlin/ContinuousIntegrationAssignment1.git'
+
            withCredentials([gitUsernamePassword(credentialsId: 'a8f79aa4-6d55-42a2-bfe2-cfd108534b41', gitToolName: 'Default')]) {
              sh 'git fetch --all'
 
