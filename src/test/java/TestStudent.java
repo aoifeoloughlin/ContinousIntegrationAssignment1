@@ -40,7 +40,7 @@ public class TestStudent {
     @Test
     @DisplayName("Add Student to a course")
     public void testAddStudentToCourse(){
-        s1.addCourseToStudent(c1);
+        c1.addStudentToCourse(s1);
     }
 
     @Test
