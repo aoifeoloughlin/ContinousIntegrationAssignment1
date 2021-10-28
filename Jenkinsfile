@@ -1,24 +1,20 @@
 pipeline {
-   agent any
+ agent any
    stages {
-    stage('Build and Compile new Project'){
+    stage('Set Up Project'){
         steps{
-            sh './gradlew clean'
+            bat 'gradlew.bat clean'
         }
     }
-    stage('Running JUnit Test'){
+    stage('Build Project'){
         steps{
-            scripts{
-                echo 'Running JUnit Testing'
-            }
+            bat 'gradlew.bat build'
         }
     }
 
-    stage('Deploy War File'){
+    stage('Test Project'){
         steps{
-            scripts{
-                echo 'Deploying War File'
-            }
+           bat 'gradlew.bat test'
         }
     }
   }
