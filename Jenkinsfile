@@ -7,19 +7,13 @@ pipeline {
            echo 'Create New Branch'
            //create new branch
                 sh "git branch -a"
-          }
-       }
-       steps {
-          script {
-               echo 'Clone Github repo to new branch'
-          }
-       }
-        steps{
-          script{
-                echo 'Checkout to the new branch'
-          }
 
-        }
+            echo 'Clone Github repo to new branch'
+
+            echo 'Checkout to the new branch'
+
+         }
+       }
     }
     stage('Build and Compile new Project'){
         steps{
