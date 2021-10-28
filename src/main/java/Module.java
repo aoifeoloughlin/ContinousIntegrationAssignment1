@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Module {
     private String modName;
     private int modID;
-    private ArrayList<Student> attendingStudents = new ArrayList<Student>();;
-    private ArrayList<Course> associatedCourses = new ArrayList<Course>();;
+    private ArrayList<Student> attendingStudents = new ArrayList<Student>();
+    private ArrayList<Course> associatedCourses = new ArrayList<Course>();
 
     public Module(String modName, int modID){
         this.modName = modName;

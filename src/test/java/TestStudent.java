@@ -1,12 +1,9 @@
 import org.joda.time.DateTime;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 public class TestStudent {
-    Student s1 = new Student("Harry Williams", 21, new Date(2000, 01,01), 12343);
+    Student s1 = new Student("Harry Williams", 21, new DateTime("2000-02-11"), 12343);
     Course c1 = new Course(39482, "Computer Science", new DateTime("2020-09-01"),  new DateTime("2021-05-31"));
     Module m1 = new Module("Software Engineering", 772);
 
