@@ -6,7 +6,7 @@ pipeline {
         script {
            echo 'Create New Branch'
            //create new branch
-                sh "git branch -a"
+           sh "git branch -a"
 
             echo 'Clone Github repo to new branch'
 
@@ -30,11 +30,12 @@ pipeline {
         }
     }
 
-    stage('Deploy War File')
+    stage('Deploy War File'){
         steps{
             scripts{
                 echo 'Deploying War File'
             }
         }
+    }
   }
 }
