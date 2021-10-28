@@ -52,6 +52,11 @@ public class Course {
 
     public void addModuleToCourse(Module module){//adds student's module to their list
         associatedModules.add(module);
+        System.out.println(associatedModules.size());
+    }
+
+    public ArrayList<Module> getAssociatedModules(){
+        return associatedModules;
     }
 
     public void addStudentToCourse(Student student){//adds student's course to their list
