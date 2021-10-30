@@ -2,10 +2,11 @@ import org.joda.time.DateTime;
 import javax.print.attribute.standard.JobSheets;
 import java.util.ArrayList;
 import org.joda.time.DateTime;
+import org.w3c.dom.ls.LSOutput;
 
 public class Course {
     private String courseName;
-    private ArrayList<Module> associatedModules = new ArrayList<Module>(); ;
+    private ArrayList<Module> associatedModules;
     private int courseID;
     private ArrayList<Student> registeredStudents = new ArrayList<Student>();;
     private DateTime startDate;
@@ -16,6 +17,7 @@ public class Course {
         this.courseName = courseName;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.associatedModules = new ArrayList<Module>();
     }
 
     public String getCourseName() {
@@ -52,14 +54,21 @@ public class Course {
 
     public void addModuleToCourse(Module module){//adds student's module to their list
         associatedModules.add(module);
-        System.out.println(associatedModules.size());
     }
 
-    public ArrayList<Module> getAssociatedModules(){
+    public ArrayList<Module> printCourseModules(){
+        associatedModules.forEach(module -> System.out.println("Course: "+getCourseName()+" Course ID: "+getCourseID()+" " +
+                "Module: ID: "+module.getModID()+" Name: "+module.getModName()+"\n"));
         return associatedModules;
     }
 
     public void addStudentToCourse(Student student){//adds student's course to their list
         registeredStudents.add(student);
+    }
+
+    public ArrayList<Student> printCourseStudents(){
+        registeredStudents.forEach(student -> System.out.println("Course: "+getCourseName()+" Course ID: "+getCourseID()+" Student: ID: "+student.getID()+" Name: "+student.getName()+" " +
+                "Username: "+student.getUsername()+" DOB: "+student.getDOB()+" Age: "+student.getAge()+"\n"));
+        return registeredStudents;
     }
 }

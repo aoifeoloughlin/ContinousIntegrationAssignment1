@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
 import org.joda.time.DateTime;
 
 public class Student {
@@ -8,8 +7,8 @@ public class Student {
     private DateTime DOB;
     private int ID;
     private String username;
-    private ArrayList<Course> courses = new ArrayList<Course>();
-    private ArrayList<Module> modules = new ArrayList<Module>();
+    private ArrayList<Course> courses;
+    private ArrayList<Module> modules;
 
     public Student(String name, int age, DateTime DOB, int ID){
         this.name = name;
@@ -17,6 +16,8 @@ public class Student {
         this.DOB = DOB;
         this.ID = ID;
         this.username = getUsername();
+        this.courses = new ArrayList<Course>();
+        this.modules = new ArrayList<Module>();
     }
 
     public String getUsername(){//generates username for student
@@ -66,5 +67,17 @@ public class Student {
 
     public void addModuleToStudent(Module module){//adds student's module to their list
         modules.add(module);
+    }
+
+    public ArrayList<Module> printCourseModules(){
+        modules.forEach(module -> System.out.println("Student:"+getName()+" ID: "+getID()+" " +
+                "Module: ID: "+module.getModID()+" Name: "+module.getModName()+"\n"));
+        return modules;
+    }
+
+    public ArrayList<Course> printCourseStudents(){
+        courses.forEach(course -> System.out.println("Student:"+getName()+" ID: "+getID()+" Course: ID:"+course.getCourseID()+
+                " Name:"+ course.getCourseName()+" Start Date:"+course.getStartDate()+" End Date: "+ course.getEndDate()+"\n"));
+        return courses;
     }
 }
