@@ -1,14 +1,11 @@
 import org.joda.time.DateTime;
-import javax.print.attribute.standard.JobSheets;
 import java.util.ArrayList;
-import org.joda.time.DateTime;
-import org.w3c.dom.ls.LSOutput;
 
 public class Course {
     private String courseName;
     private ArrayList<Module> associatedModules;
     private int courseID;
-    private ArrayList<Student> registeredStudents = new ArrayList<Student>();;
+    private ArrayList<Student> registeredStudents;
     private DateTime startDate;
     private DateTime endDate;
 
@@ -18,6 +15,7 @@ public class Course {
         this.startDate = startDate;
         this.endDate = endDate;
         this.associatedModules = new ArrayList<Module>();
+        this.registeredStudents = new ArrayList<Student>();
     }
 
     public String getCourseName() {
@@ -52,20 +50,24 @@ public class Course {
         this.endDate = endDate;
     }
 
-    public void addModuleToCourse(Module module){//adds student's module to their list
+    //adds modules associated to the course
+    public void addModuleToCourse(Module module){
         associatedModules.add(module);
     }
 
+    //prints the modules associated to the course
     public ArrayList<Module> printCourseModules(){
         associatedModules.forEach(module -> System.out.println("Course: "+getCourseName()+" Course ID: "+getCourseID()+" " +
                 "Module: ID: "+module.getModID()+" Name: "+module.getModName()+"\n"));
         return associatedModules;
     }
 
-    public void addStudentToCourse(Student student){//adds student's course to their list
+    //add the students associated to the course
+    public void addStudentToCourse(Student student){
         registeredStudents.add(student);
     }
 
+    //prints the students associated to the course
     public ArrayList<Student> printCourseStudents(){
         registeredStudents.forEach(student -> System.out.println("Course: "+getCourseName()+" Course ID: "+getCourseID()+" Student: ID: "+student.getID()+" Name: "+student.getName()+" " +
                 "Username: "+student.getUsername()+" DOB: "+student.getDOB()+" Age: "+student.getAge()+"\n"));

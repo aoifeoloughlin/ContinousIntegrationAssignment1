@@ -2,17 +2,13 @@ import org.joda.time.DateTime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 public class TestStudent {
     Student s1 = new Student("Harry Williams", 21, new DateTime("2000-02-11"), 12343);
     Course c1 = new Course(39482, "Computer Science", new DateTime("2020-09-01"),  new DateTime("2021-05-31"));
     Module m1 = new Module("Software Engineering", 772);
-
     Module m2 = new Module("Astrophysics", 555);
 
-
-
+    //add tests to check that the variables can be gotten and that they are getting added to the arraylists
     @Test
     @DisplayName("Get the username of the student")
     public void testUserName(){

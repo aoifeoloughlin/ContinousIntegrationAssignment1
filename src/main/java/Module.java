@@ -29,6 +29,7 @@ public class Module {
         this.modID = modID;
     }
 
+    //add the relevant courses and students to the modules array lists
     public void addCourseToModule(Course course){//adds student's course to their list
         associatedCourses.add(course);
     }
@@ -37,6 +38,7 @@ public class Module {
         attendingStudents.add(student);
     }
 
+    //prints the relevant courses and students from arraylists
     public ArrayList<Student> printModuleStudents(){
         attendingStudents.forEach(student -> System.out.println("Module: "+getModName()+" ID: "+getModID()+" Student: ID: "+student.getID()+" Name: "+student.getName()+" " +
                 "Username: "+student.getUsername()+" DOB: "+student.getDOB()+" Age: "+student.getAge()+"\n"));

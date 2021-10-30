@@ -61,6 +61,7 @@ public class Student {
         this.username = username;
     }
 
+    //adds the relevant courses and modules to the students' arraylists
     public void addCourseToStudent(Course course){//adds student's course to their list
         courses.add(course);
     }
@@ -69,6 +70,7 @@ public class Student {
         modules.add(module);
     }
 
+    //prints the relevant courses and modules to the students' arraylists
     public ArrayList<Module> printCourseModules(){
         modules.forEach(module -> System.out.println("Student:"+getName()+" ID: "+getID()+" " +
                 "Module: ID: "+module.getModID()+" Name: "+module.getModName()+"\n"));
