@@ -71,13 +71,13 @@ public class Student {
     }
 
     //prints the relevant courses and modules to the students' arraylists
-    public ArrayList<Module> printCourseModules(){
+    public ArrayList<Module> printStudentModules(){
         modules.forEach(module -> System.out.println("Student:"+getName()+" ID: "+getID()+" " +
                 "Module: ID: "+module.getModID()+" Name: "+module.getModName()+"\n"));
         return modules;
     }
 
-    public ArrayList<Course> printCourseStudents(){
+    public ArrayList<Course> printStudentCourses(){
         courses.forEach(course -> System.out.println("Student:"+getName()+" ID: "+getID()+" Course: ID:"+course.getCourseID()+
                 " Name:"+ course.getCourseName()+" Start Date:"+course.getStartDate()+" End Date: "+ course.getEndDate()+"\n"));
         return courses;
